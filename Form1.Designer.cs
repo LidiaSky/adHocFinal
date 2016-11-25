@@ -29,9 +29,9 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea7 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend7 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series7 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabInput = new System.Windows.Forms.TabPage();
             this.numericUpDownVerticesStep = new System.Windows.Forms.NumericUpDown();
@@ -132,6 +132,7 @@
             this.label5.Size = new System.Drawing.Size(198, 20);
             this.label5.TabIndex = 4;
             this.label5.Text = "Тип области - окружность";
+            this.label5.Click += new System.EventHandler(this.label5_Click);
             // 
             // label2
             // 
@@ -301,7 +302,7 @@
             this.tabResults.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.tabResults.Name = "tabResults";
             this.tabResults.Padding = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.tabResults.Size = new System.Drawing.Size(574, 451);
+            this.tabResults.Size = new System.Drawing.Size(574, 303);
             this.tabResults.TabIndex = 1;
             this.tabResults.Text = "Результаты";
             this.tabResults.UseVisualStyleBackColor = true;
@@ -311,16 +312,16 @@
             this.chart.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            chartArea7.Name = "ChartArea1";
-            this.chart.ChartAreas.Add(chartArea7);
-            legend7.Name = "Legend1";
-            this.chart.Legends.Add(legend7);
+            chartArea1.Name = "ChartArea1";
+            this.chart.ChartAreas.Add(chartArea1);
+            legend1.Name = "Legend1";
+            this.chart.Legends.Add(legend1);
             this.chart.Location = new System.Drawing.Point(7, 41);
             this.chart.Name = "chart";
-            series7.ChartArea = "ChartArea1";
-            series7.Legend = "Legend1";
-            series7.Name = "Series1";
-            this.chart.Series.Add(series7);
+            series1.ChartArea = "ChartArea1";
+            series1.Legend = "Legend1";
+            series1.Name = "Series1";
+            this.chart.Series.Add(series1);
             this.chart.Size = new System.Drawing.Size(567, 405);
             this.chart.TabIndex = 4;
             this.chart.Text = "chart1";

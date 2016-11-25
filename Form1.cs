@@ -161,6 +161,11 @@ namespace adHoc
 
         }
 
+        private void label5_Click(object sender, EventArgs e)
+        {
+
+        }
+
         private void Chart(Dictionary<int, double> data)
         {
             chart.Series.Clear();

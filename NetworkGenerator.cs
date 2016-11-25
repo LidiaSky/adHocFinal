@@ -53,11 +53,28 @@ namespace adHoc
             var result = new int[count][];
             for (int i = 0; i < count; i++)
             {
-                result[i] = new int[count];
+                /*result[i] = new int[count];
                 for (int j = 0; j < i; j++)
                 {
                     result[i][j] = result[j][i] = (vertices[i].Intersects(vertices[j])&&obst.NotInterrupt(vertices[i],vertices[j])) ? 1 : 0; 
+                }*/
+                var lst = new List<int>();
+                for (int j = 0; j < i; j++)
+                {
+                    if (vertices[i].Intersects(vertices[j]) && obst.NotInterrupt(vertices[i], vertices[j]))
+                    {
+                        lst.Add(j);
+                    }
                 }
+                for (int j = i + 1; j < count; j++)
+                {
+                    if (vertices[i].Intersects(vertices[j]) && obst.NotInterrupt(vertices[i], vertices[j]))
+                    {
+                        lst.Add(j);
+                    }
+                }
+                result[i] = lst.ToArray();
+
             }
             return result;
         }
