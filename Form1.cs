@@ -92,7 +92,7 @@ namespace adHoc
                     for (int i = 0; i < iterations; i++)
                     {
                         // Вызов расчета для каждой итерации
-                        float r = graph.AverageDegree(generator.Generate());
+                        int r = graph.ComponentCount(generator.Generate());
                         /*
                             Convert.ToDouble(textBoxRadiusMin.Text),
                             Convert.ToDouble(textBoxRadiusMax.Text),

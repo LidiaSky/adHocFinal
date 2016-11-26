@@ -18,19 +18,37 @@ namespace adHoc
             n = vertexCount;
         }
         //заменить на ф-цию определения числа компонент связности
-        public float AverageDegree(int[][] G)
+        private bool[] used;
+        void dfs(List<int> compCurrent, int[][] G, int v)
         {
-
-            deg = 0;
-                for (int j = 0; j < n; j++)
+            used[v] = true;
+            compCurrent.Add(v);
+            for (int i = 0; i < G[v].Count(); ++i)
+            {
+                int to = G[v][i];
+                if (!used[to])
                 {
-                    for (int i = 0; i < n; i++)
-                    {
-                        deg += G[i][j];
-                    }
+                    dfs(compCurrent, G, to);
                 }
-            
-            return (deg / n);
+            }
+        }
+
+        public int ComponentCount(int[][] G)
+        {
+            List<int> compCurrent = new List<int>(); // текущая компонента 
+            int res = 0; // кол-во компонент 
+            bool[] used = new bool[G.Count()];
+            int n = G.Count();
+            for (int i = 0; i < n; ++i)
+                used[i] = false;
+            for (int i = 0; i < n; ++i)
+                if (!used[i])
+                {
+                    compCurrent.Clear();
+                    dfs(compCurrent, G, i);
+                    res++;
+                }
+            return res;
         }
     }
 }
