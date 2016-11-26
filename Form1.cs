@@ -182,7 +182,7 @@ namespace adHoc
                 Color = Color.BlueViolet
             });
             chart.ChartAreas[0].AxisX.Title = "Количество вершин";
-            chart.ChartAreas[0].AxisY.Title = "Мат. ожидание средней степени вершины";
+            chart.ChartAreas[0].AxisY.Title = "Мат. ожидание числа компонент связности в графе";
             chart.ChartAreas[0].AxisX.IsMarginVisible = false;
             chart.ChartAreas[0].AxisY.Maximum = data.Max(pair => pair.Value) * 1.05;
             foreach (var point in data)

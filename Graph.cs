@@ -19,7 +19,7 @@ namespace adHoc
         }
         //заменить на ф-цию определения числа компонент связности
         private bool[] used;
-        void dfs(List<int> compCurrent, int[][] G, int v)
+        void dfs(List<int> compCurrent, int[][] G, int v,bool[] used)
         {
             used[v] = true;
             compCurrent.Add(v);
@@ -28,7 +28,7 @@ namespace adHoc
                 int to = G[v][i];
                 if (!used[to])
                 {
-                    dfs(compCurrent, G, to);
+                    dfs(compCurrent, G, to,used);
                 }
             }
         }
@@ -45,7 +45,7 @@ namespace adHoc
                 if (!used[i])
                 {
                     compCurrent.Clear();
-                    dfs(compCurrent, G, i);
+                    dfs(compCurrent, G, i,used);
                     res++;
                 }
             return res;
